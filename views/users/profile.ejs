@@ -1,0 +1,45 @@
+<%- include("../partials/header") %>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card" style="width: 18rem;">
+                <div class="bg-success text-white">
+                    <h5 class="ml-4 my-2"><%=user.username%></h5>
+                </div>
+                <img src="<%=user.photo%>" class="card-img-top" alt="Profile image">
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                        <li>First Name: <%=user.firstname%></li>
+                        <li>Last Name: <%=user.lastname%></li>
+                        <li>Location: <%=user.location%></li>
+                        <li>Joined: <%=user.createdAt.toDateString()%></li>
+                    </ul>
+                    <%if(currentUser && currentUser.equals(user._id)) {%>
+                    <a class="btn btn-outline-warning mt-4" href="/users/<%=user._id%>/edit">Edit Profile</a>
+                    <%}%>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2 mb-3">
+        </div>
+        <div class="col-md-7 mb-3">
+            <h2 class="ml-5 mb-4 text-success">Contributions by <%=user.username%></h2>
+                    <div class="text-center">
+                        <% food.forEach(function(food){ %>
+                        <div class="card mb-4" style=" height: 31rem; width: 30rem;">
+                            <h5 class="card-header bg-success text-white"><%= food.dish %></h5>
+                            <img class="card-img-top" style="height: 16rem;" src="<%= food.image %>"
+                                alt="Card image cap">
+                            <div class="card-body">
+                                <h4 class="card-title text-primary">@ <%= food.restaurant %></h4>
+                                <p class="card-text"><%=food.review.substring(0, 100)%>...</p>
+                                <a href="/food/<%=food._id%>" class="btn btn-success">See More</a>
+                            </div>
+                        </div>
+                        <% });%>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <%- include("../partials/footer") %>

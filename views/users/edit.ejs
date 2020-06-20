@@ -1,0 +1,23 @@
+<%- include("../partials/header") %>
+<div class="container">
+    <h1 class="text-center text-success">Edit Profile</h1>
+    <div style="width:40%; margin: 25px auto;">
+        <form action="/users/<%=currentUser._id%>/?_method=PUT" method="POST">
+            <label><h5>Username</h5></label>
+            <div class="form-group">
+                <input class="form-control" type="text" name="user[username]" value="<%=user.username%>">
+            </div>
+            <div class="form-group">
+                <label><h5>Avatar Pic</h5></label>
+                <input class="form-control" type="text" name="user[photo]" value="<%=user.photo%>">
+            </div>
+            <div class="form-group">
+                <label><h5>Location</h5></label>
+                <input class="form-control" type="text" name="user[location]" value="<%=user.location%>">
+            </div>
+            <button type="submit" class="btn btn-outline-success">Update</button>
+        </form>
+    </div>
+</div>
+
+<%- include("../partials/footer") %>

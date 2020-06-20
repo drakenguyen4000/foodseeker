@@ -1,0 +1,45 @@
+<%- include("../partials/header") %>
+
+<div class="container">
+    <%if(currentUser && currentUser.isAdmin) {%>
+        <h1 class="text-info">Welcome Admin!</h1>
+    <% } %>
+    <div class="jumbotron">
+        <h1 class="display-4">Welcome to Food Seeker!</h1>
+        <p class="lead">Welcome food lovers! Here you can share and discuss your favorite food dish with other food
+            enthusiast.</p>
+        <a href="/food/new" class="btn btn-lg btn-success">Share a Dish</a>
+    </div>
+    <div class="row text-center" style="display:flex; flex-wrap: wrap;">
+        <!--Display no match message if search can not find a campground-->
+        <!--if noMatch IS NOT null then show no match message and search bar-->
+        <% if(noMatch !== null) { %>
+        <div class="col-md-12">
+            <h3><%= noMatch %></h3>
+            <p>
+            <form action="/food" method="GET" class="form-inline">
+                <div class="form-group" style="margin: 25px auto;">
+                    <input type="text" name="search" placeholder="Search for a dish..." class="form-control mr-2">
+                    <input type="submit" value="Search" class="btn btn-default">
+                </div>
+            </form>
+            </p>
+        </div>
+        <% } %>
+        <% food.forEach(function(food){ %>
+        <div class="col-md-4 col-sm-6 my-3">
+            <div class="card" style="max-width: 400px;">
+                <h5 class="card-header bg-success text-white"><%= food.dish %></h5>
+                <img class="card-img-top" style="height: 14rem;" src="<%= food.image %>" alt="Card image cap">
+                <div class="card-body">
+                    <h4 class="card-title text-primary">@ <%= food.restaurant %></h4>
+                    <p class="card-text"><%=food.review.substring(0, 100)%>...</p>
+                    <a href="/food/<%=food._id%>" class="btn btn-success">See More</a>
+                </div>
+            </div>
+        </div>
+        <% });%>
+    </div>
+</div>
+
+<%- include("../partials/footer") %>

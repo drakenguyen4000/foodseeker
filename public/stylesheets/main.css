@@ -1,0 +1,54 @@
+body {
+  background: #f9f9f9;
+}
+
+label {
+  color: grey;
+}
+
+.bottom-footer {
+  margin-top: 10%;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  position: absolute;
+  bottom: auto;
+  width: 100%;
+}
+
+.jumbotron {
+  background-image: url("https://images.unsplash.com/photo-1452967712862-0cca1839ff27?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-shadow: 1px 1px 1px black;
+}
+
+.delete-button {
+  display: inline;
+}
+
+/* Google Maps */
+#map {
+  height: 400px;
+  width: 100%;
+}
+
+.seeker-form {
+  width:40%; 
+  margin: 25px auto;
+}
+
+.comment-date {
+  font-size: .75em;
+}
+
+@media only screen and (max-width: 1100px) {
+  .seeker-form {
+    width:60%; 
+    margin: 25px auto;
+  }
+}
+
+.list-group {
+  list-style: none;
+}

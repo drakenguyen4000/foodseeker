@@ -1,0 +1,17 @@
+<%- include("../partials/header") %>
+<div class="container">
+    <h2 class="text-center text-success mt-4">Edit Comment</h2>
+    <div class="mx-auto w-50 mt-4">
+        <form action="/food/<%=food_id %>/comments/<%= comment._id %>?_method=PUT" method="POST">
+            <label>Comment</label>
+            <div class="form-group">
+                <textarea class="form-control" name="comment[text]"><%=comment.text%></textarea>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-info btn-block mx-auto w-50 mt-2">Update</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<%- include("../partials/footer") %>

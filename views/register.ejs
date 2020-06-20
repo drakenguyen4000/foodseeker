@@ -1,0 +1,39 @@
+<%- include("./partials/header") %>
+<div class="container">
+    <h1 class="text-center">Register</h1>
+    <div style="width:40%; margin: 25px auto;">
+        <form action="/register" method="POST">
+            <label><h5>Username</h5></label>
+            <div class="form-group">
+                <input class="form-control" type="text" name="username">
+            </div>
+            <label><h5>Password</h5></label>
+            <div class="form-group">
+                <input class="form-control" type="password" name="password">
+            </div>
+            <label><h5>Admin Code</h5></label>
+            <div class="form-group">
+                <input class="form-control" type="text" name="admincode">
+            </div>
+            <label><h5>First Name</h5></label>
+            <div class="form-group">
+                <input class="form-control" type="text" name="firstname">
+            </div>
+            <label><h5>Last Name</h5></label>
+            <div class="form-group">
+                <input class="form-control" type="text" name="lastname">
+            </div>
+            <div class="form-group">
+                <label><h5>Avatar Pic</h5></label>
+                <input class="form-control" type="text" name="photo">
+            </div>
+            <div class="form-group">
+                <label><h5>Location</h5></label>
+                <input class="form-control" type="text" name="location">
+            </div>
+            <button type="submit" class="btn btn-outline-success">Register</button>
+        </form>
+    </div>
+</div>
+
+<%- include("./partials/footer") %>
