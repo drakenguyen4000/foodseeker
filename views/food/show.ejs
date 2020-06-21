@@ -10,7 +10,7 @@
                             <h4 class="text-info"><%= food.dish %></h4>
                             <h5 class="text-success">for $<%=food.price%></h5>
                             <div class="d-flex flex-row">
-                                <h2 class="text-secondary"><a href="<%=food.website%>">@ <%= food.restaurant%></a></h2>
+                                <h2 class="text-secondary"><a href="<%=food.website%>">@ <u><%= food.restaurant%></u></a></h2>
                             </div>
                         </li>
                     </ul>
@@ -67,7 +67,7 @@
         <div class="col-md-3">
             <div class="list-group">
                 <li class="list-group-item active btn btn-success" data-toggle="collapse" href="#collapseExample"
-                    role="button" aria-expanded="false" aria-controls="collapseExample"><%= food.restaurant%>
+                    role="button" aria-expanded="false" aria-controls="collapseExample"><u><%= food.restaurant%></u>
                 </li>
                 <div class="lis-group-item collapse" id="collapseExample">
                     <div class="card card-body"><%=food.location%></div>
@@ -112,7 +112,7 @@
                                             <a href="/food/<%=food._id%>/comments/<%=comment._id%>/edit"
                                                 class="btn btn-outline-warning btn-sm mr-2">Edit</a>
                                             <%}%>
-                                            <% if(currentUser && comment.author.id.equals(currentUser.id) ||currentUser.isAdmin) {%>
+                                            <% if(currentUser && comment.author.id.equals(currentUser.id) || currentUser && currentUser.isAdmin) {%>
                                             <form class="delete-button"
                                                 action="/food/<%=food._id%>/comments/<%=comment._id%>?_method=DELETE"
                                                 method="POST">
