@@ -24,7 +24,7 @@
                                                 <h4 class="card-title text-info">
                                                     <a href="/users/<%=food.author.id%>"><%=food.author.username%></a>
                                                 </h4>
-                                                <image src="<%=food.author.photo%>" style="width: 9em"></image>
+                                                <image src="<%=food.author.photo%>" style="width: 90%; max-width: 9em"></image>
                                                 <div>
                                                     <span
                                                         class="text-secondary"><strong><%=food.author.location%></strong>
@@ -66,7 +66,7 @@
         </div>
         <div class="col-md-3">
             <div class="list-group">
-                <li class="list-group-item active btn btn-success" data-toggle="collapse" href="#collapseExample"
+                <li class="list-group-item active btn btn-success"  style="white-space: normal;" data-toggle="collapse" href="#collapseExample"
                     role="button" aria-expanded="false" aria-controls="collapseExample"><u><%= food.restaurant%></u>
                 </li>
                 <div class="lis-group-item collapse" id="collapseExample">
@@ -95,7 +95,7 @@
                                         <h5 class="card-title text-info">
                                             <a href="/users/<%=comment.author.id%>"><%=comment.author.username%></a>
                                         </h5>
-                                        <image src="<%=comment.author.photo%>" style="width: 8em"></image>
+                                        <image src="<%=comment.author.photo%>" style="max-width: 8em; width: 90%;"></image>
                                         <div>
                                             <span class="text-secondary"><strong><%=comment.author.location%></strong>
                                             </span>
@@ -164,6 +164,5 @@
     }
 </script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMC7WIm7Hk8QBrXUbtxa1hlxpHYCp8zx8&callback=initMap" type="text/javascript"></script>
-
 
 <%- include("../partials/footer") %>
