@@ -35,7 +35,7 @@ router.post("/register", (req, res) => {
     location: req.body.location,
   });
 
-  //isAdmin - Determines if use entered the correct admin code to give them admin status
+  //isAdmin - Determines if user entered the correct admin code to give them admin status
   if(req.body.admincode === isAdminCode) {
     newUser.isAdmin = true;
   }
