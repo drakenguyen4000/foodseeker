@@ -24,7 +24,7 @@ app.set("view engine", "ejs");
 app.use(methodOverride("_method"));
 app.use(
   require("express-session")({
-    secret: "Rusty is the best and cutest dog",
+    secret: "App for food lovers!",
     resave: false,
     saveUninitialized: false,
   })
