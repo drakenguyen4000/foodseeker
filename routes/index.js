@@ -26,6 +26,7 @@ router.get("/register", (req, res) => {
 
 //Register
 router.post("/register", (req, res) => {
+  //Create new User Model
   var newUser = new User({
     username: req.body.username,
     photo: req.body.photo,
