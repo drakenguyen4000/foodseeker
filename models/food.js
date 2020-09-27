@@ -25,6 +25,7 @@ var foodSchema = new mongoose.Schema({
     location: String
   },
   //associate food to comments
+  //Set as comment is set array so we can push our created comment from comment model into the food model 
   comments: [
     {
       type: mongoose.Schema.Types.ObjectId,

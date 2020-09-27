@@ -26,12 +26,17 @@ router.post("/food/:id/comments", middleware.isLoggedIn, (req, res) => {
           req.flash("error", "Oops, something went wrong!");
           console.log(err);
         } else {
+          //create req.body.comments makes an empty comment object
+          //Here were create properties and assigning them to comment object directly
           comment.author.id = req.user._id;
           comment.author.username = req.user.username;
           comment.author.photo = req.user.photo;
           comment.author.location = req.user.location;
+          //Save to comment model.  
           comment.save();
+          //push comment into model into food model with comment array (associated property)
           food.comments.push(comment);
+          //save this push
           food.save();
           req.flash("success", "Your comment has been added!");
           res.redirect(`/food/` + food._id);
