@@ -1,4 +1,3 @@
-require("dotenv").config();
 
 const middlewareObj = require("../middleware");
 
@@ -13,7 +12,6 @@ router.get("/", function (req, res) {
   res.render("food/landing");
 });
 
-var isAdminCode = process.env.ADMIN_CODE;
 
 //=====================
 //Authentication Routes
@@ -35,8 +33,8 @@ router.post("/register", (req, res) => {
     location: req.body.location,
   });
 
-  //isAdmin - Determines if user entered the correct admin code to give them admin status
-  if(req.body.admincode === isAdminCode) {
+  //isAdmin - Determines if use entered the correct admin code to give them admin status
+  if(req.body.admincode === 'foodfanatic2099') {
     newUser.isAdmin = true;
   }
 

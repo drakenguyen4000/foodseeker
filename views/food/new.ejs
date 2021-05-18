@@ -4,32 +4,32 @@
     <div class="seeker-form">
         <form action="/food" method="POST">
             <div class="form-group">
-                <label><h5>Dish Name</h5></label>
-                <input class="form-control" name="dish" type="text">
+                <label for="dish-name"><h5>Dish Name</h5></label>
+                <input class="form-control" id="dish-name" name="dish" type="text">
             </div>
             <div class="form-group">
-                <label><h5>Image Url</h5></label>
-                <input class="form-control" name="image" type="text">
+                <label for="image-url"><h5>Image Url</h5></label>
+                <input class="form-control" id="image-url" name="image" type="text">
             </div>
             <div class="form-group">
-                <label><h5>Price</h5></label>
-                <input class="form-control" name="price" min="0.00" step="0.01" type="number">
+                <label for="price"><h5>Price</h5></label>
+                <input class="form-control" id="price" name="price" min="0.00" step="0.01" type="number">
             </div>
             <div class="form-group">
-                <label><h5>Restaurant</h5></label>
-                <input class="form-control" name="restaurant" type="text">
+                <label for="restaurant"><h5>Restaurant</h5></label>
+                <input class="form-control" id="restaurant" name="restaurant" type="text">
             </div>
             <div class="form-group">
-                <label><h5>Website</h5></label>
-                <input class="form-control" name="website" type="text">
+                <label for="website"><h5>Website</h5></label>
+                <input class="form-control" id="website" name="website" type="text">
             </div>
             <div class="form-group">
-                <label><h5>Location</h5></label>
-                <input class="form-control" type="text" name="location" placeholder="papaya King, NY">
+                <label for="location"><h5>Location</h5></label>
+                <input class="form-control" type="text" id="location" name="location">
             </div>
             <div class="form-group">
-                <label><h5>Review</h5></label>
-                <textarea class="form-control" style="height: 200px;" name="review"></textarea>
+                <label for="review"><h5>Review</h5></label>
+                <textarea class="form-control" style="height: 200px;" id="review" name="review"></textarea>
             </div>
             <div class="form-group d-flex justify-content-center">
                 <button class="btn btn-lg btn-primary px-6">Submit</button>
@@ -37,5 +37,4 @@
         </form>
     </div>
 </div>
-
 <%- include("../partials/footer") %>
